@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f0796a6de6cfd1842bea4e179eb451e7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PlayerHand: {instanceID: 0}
+  - playerReticle: {instanceID: 0}
+  - interactIcon: {fileID: 21300000, guid: 6bc7f54650ae826478ad092221456c3c, type: 3}
+  - defaultreticleIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

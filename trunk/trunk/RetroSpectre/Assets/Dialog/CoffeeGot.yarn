@@ -1,0 +1,4 @@
+﻿title: CoffeeGot
+---
+<<set $CoffeeAmount = $CoffeeAmount + 1>>
+===

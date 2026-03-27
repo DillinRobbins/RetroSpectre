@@ -1,0 +1,34 @@
+﻿title: FetchQuestExample
+//In this yarn script, an NPC asks thje player to find their cube when they first meet them.
+//Once the cube is returned, they thank the player and their affinity variable is increased.
+//This then changes their dialogue to them thanking you for the player's earlier actions.
+---
+//Declare the variable you'll be checking for in this yarnscript.
+<<declare $hasCube = false>>
+<<declare $AlleyAffinity = 0>>
+
+//Check if the NPC's affinity is high enough for this dialogue.
+<<if $AlleyAffinity == 10>>
+    Alley: Thanks for your help earlier! I appreciate it!
+//Otherwise, let's do this dialgoue.
+<<else>>
+    //Make an if statement to check which dialogue sequence should play.
+    <<if $hasCube is false>>
+    //This is the "false" dialogue sequence. 
+    //(in this example, it's when the player talks to this NPC when they don't have the quest item.) 
+        Alley: Yo! Have you seen my cube anywhere?
+        -> Yeah, I think so.
+            Alley: Great! Do you think you can bring it to me, please?
+        -> I haven't.
+            Alley: Dang... well if you see it, make sure to bring it to me, OK?
+    <<else>>
+    //This is the "true" dialogue sequence.
+    //(in this example, it's when the player talks to this NPC when they do have the quest item.)
+        Alley: Hey! My cube! Thanks!
+        //increase this NPC's affinity by 10.
+        <<set $AlleyAffinity = $AlleyAffinity + 10>>
+        <<set $HelpedAlley = true>>
+<<endif>>
+<<endif>>
+
+===

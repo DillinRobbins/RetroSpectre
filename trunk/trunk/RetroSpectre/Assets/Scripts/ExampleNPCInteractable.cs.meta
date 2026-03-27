@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 110a60945fe841f4d95f66d2c2578d97
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - QuestInteractable: {instanceID: 0}
+  - DR: {instanceID: 0}
+  - VarStorage: {instanceID: 0}
+  - Outline: {fileID: 2100000, guid: e84d9ae6c820902498c37157e8abfbfa, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

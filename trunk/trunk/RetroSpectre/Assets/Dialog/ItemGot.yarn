@@ -1,0 +1,6 @@
+﻿title: ItemGot
+---
+<<declare $itemName = "">>
+
+Got {$itemName}!
+===

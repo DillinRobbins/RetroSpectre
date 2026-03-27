@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 1ef24c3de31f9c24eabe2653b5876051
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Outline: {fileID: 2100000, guid: e84d9ae6c820902498c37157e8abfbfa, type: 2}
+  - DoorAnimator: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

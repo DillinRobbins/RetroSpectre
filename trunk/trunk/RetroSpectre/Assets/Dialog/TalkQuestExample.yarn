@@ -1,0 +1,27 @@
+﻿title: TalkQuestExample
+//This NPC tracks simple bool variables to check which dialogue to use based on other NPC's completion.
+//Check the Alley and Grey NPCs to see where the "Helped" variables are set.
+---
+<<declare $HelpedGrey = false>>
+<<declare $GreyDialogueComplete = false>>
+<<declare $HelpedAlley = false>>
+<<declare $AlleyDialogueComplete = false>>
+
+<<if $GreyDialogueComplete == false>>
+<<if $HelpedGrey == false>>
+Some Guy: Hey, have you talked to Ol' Grey? You should! He lives right across the way from me! He'd appreciate the company!
+<<else>>
+Some Guy: Oh? You've helped out Grey? That's great! Isn't he such a swell guy?
+<<set $GreyDialogueComplete = true>>
+<<endif>>
+<<endif>>
+
+<<if $AlleyDialogueComplete == false>>
+<<if $HelpedAlley == false>>
+Some Guy: I think I heard my neighbor Alley was looking for their cube. Hope everything's alright! Maybe you should go check in on them?
+<<else>>
+Some Guy: Oh? You found Alley's cube? What a relief!
+<<set $AlleyDialogueComplete = true>>
+<<endif>>
+<<endif>>
+===

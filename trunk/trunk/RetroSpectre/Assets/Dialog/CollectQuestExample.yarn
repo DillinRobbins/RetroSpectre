@@ -1,0 +1,59 @@
+﻿title: CollectQuestExample
+//Through tracking a CoffeeAmount variable, the NPC chooses dialogue that progresses the quest with each step.
+//With each step, their affinity rises.
+//Check the Mug objects and their yarn scripts to see an example of setting these variables upon collection.
+---
+<<declare $CoffeeAmount = 0>>
+<<declare $GreyAffinity = 0>>
+
+//Dialogue that plays if no coffees are found (first interaction)
+<<if $CoffeeAmount == 0>>
+    Grey: ...
+    Grey: Go away.
+    (It seems like Grey hasn't had his coffee yet.)
+
+//Dialogue after finding first coffee
+<<elseif $CoffeeAmount == 1>>
+    //Dialogue after you gave him the coffee
+    <<if $GreyAffinity == 10>>
+        Grey: ...
+        Grey: Still feel a bit... drowsy.
+    <<endif>>
+    //NOTICE: this <<once>> <<endonce>> keyword will make the enclosed dialogue play once every play session! Handy!
+    <<once>>
+        <<once>>
+        <<set $GreyAffinity = $GreyAffinity + 10>>
+        <<endonce>>
+        Grey: Huh? You got me coffee?
+        Grey: ...Thanks.
+        (Grey seems to have warmed up a bit.)
+        Grey Affinity raised to {$GreyAffinity}.
+    <<endonce>>
+//this pattern repeats for the other coffees
+<<elseif $CoffeeAmount == 2>>
+    <<if $GreyAffinity == 20>>
+        Grey: ...
+        Grey: Man... still not quite awake.
+    <<endif>>
+    <<once>>
+        <<once>>
+        <<set $GreyAffinity = $GreyAffinity + 10>>
+        <<endonce>>
+        Grey: Oh... you got me some more?
+        Grey: Thanks... I appreciate it.
+        (Grey seems to have warmed up a bit.)
+        Grey Affinity raised to {$GreyAffinity}.
+    <<endonce>>
+
+<<elseif $CoffeeAmount >= 3>>
+    <<once>>
+        <<once>>
+        <<set $GreyAffinity = $GreyAffinity + 10>>
+        <<endonce>>
+        Grey: Another one? Alright! Now we're talkin'.
+        (Grey seems to be totally energi-- wait what's happening?)
+        <<GreyLaunch GreyNPCModel>>
+        <<set $HelpedGrey = true>>
+    <<endonce>>
+<<endif>>
+===
