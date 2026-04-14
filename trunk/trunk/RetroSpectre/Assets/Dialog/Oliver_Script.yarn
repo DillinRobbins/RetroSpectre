@@ -1,0 +1,32 @@
+﻿title: NewYarnScript
+---
+This is an example of a Yarn Spinner script. Write your dialogue here!
+===
+---
+<<declare $HasFrisbee: bool = false>>
+<<declare $OliverAffinity: number = 0>>
+<<declare $HelpedOliver = false>>
+
+<<if $OliverAffinity = 10>>
+    Oliver: Thanks again mister detective guy! Now go help out the others!
+
+<<else>>
+    <<if HasFrisbee = false>>
+        Oliver: Hey mister! You look super awesome! Are you a detective or something?
+        Oliver: My name is Oliver, but you can call me Oli! I could really use a detective right now, so you're in the right place!
+        Oliver: Thing is, I don't know where I am, but I've got this funny feeling I might be dead. I dunno, everyone else around here is dead so figure I probably am too.
+        Oliver: But I don't remember anything about how I died… all I remember is chasing a ball or a toy of some sort and then BAM! I was here!
+        Oliver: Maybe if I could find that toy I was chasing, I could remember how I died. Say, you're a detective, right? You should help me out! If you bring me that toy… or was it a plate? Anyways, I'll give you something in return.
+        -> Yeah, I'll Help.
+            Oliver: Thanks mister!
+        -> No way kid.
+            Oliver: Figures. I bet you're not even a real detective!
+    <<else>>
+        Oliver: WOAH. That’s it. That’s the thing! That’s the toy I was chasing! It was a frisbee!
+        Oliver: I remember running around outside, looking up to catch the frisbee, and… oh. Dang it. I must have fallen into the well.
+        Oliver: Well, that’s a bummer. Not a very awesome way to go, but oh well. You helped me out, so thanks mister! Here's the thing I said I'd give you!
+        Oliver: It's a token of innocence. I hear if you get three of them and bring them to the big door outside, you get to leave. You should see if there's anyone else around here who needs a detective!
+        <<set $OliverAffinity = $OliverAffinity + 10>>
+        <<set $HelpedOliver = true>>
+<<endif>>
+<<endif>>
