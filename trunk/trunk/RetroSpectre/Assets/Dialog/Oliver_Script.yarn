@@ -1,4 +1,4 @@
-﻿title: NewYarnScript
+﻿title: Oliver_Script
 ---
 This is an example of a Yarn Spinner script. Write your dialogue here!
 ===
@@ -7,7 +7,7 @@ This is an example of a Yarn Spinner script. Write your dialogue here!
 <<declare $OliverAffinity: number = 0>>
 <<declare $HelpedOliver = false>>
 
-<<if $OliverAffinity = 10>>
+<<if OliverAffinity = 10>>
     Oliver: Thanks again mister detective guy! Now go help out the others!
 
 <<else>>
@@ -21,12 +21,18 @@ This is an example of a Yarn Spinner script. Write your dialogue here!
             Oliver: Thanks mister!
         -> No way kid.
             Oliver: Figures. I bet you're not even a real detective!
+        <<set OliverAffinity = OliverAffinity + 5>>
+    
+    <<elseif HasFrisbee = false and OliverAffinity = 5>>
+        Oliver: That’s not it! The toy I was chasing was round, and flat. I remember playing with it outside.
+        Oliver: Try again, detective! This should be easy for you.
+
     <<else>>
         Oliver: WOAH. That’s it. That’s the thing! That’s the toy I was chasing! It was a frisbee!
         Oliver: I remember running around outside, looking up to catch the frisbee, and… oh. Dang it. I must have fallen into the well.
         Oliver: Well, that’s a bummer. Not a very awesome way to go, but oh well. You helped me out, so thanks mister! Here's the thing I said I'd give you!
         Oliver: It's a token of innocence. I hear if you get three of them and bring them to the big door outside, you get to leave. You should see if there's anyone else around here who needs a detective!
-        <<set $OliverAffinity = $OliverAffinity + 10>>
-        <<set $HelpedOliver = true>>
+        <<set OliverAffinity = OliverAffinity + 5>>
+        <<set HelpedOliver = true>>
 <<endif>>
 <<endif>>

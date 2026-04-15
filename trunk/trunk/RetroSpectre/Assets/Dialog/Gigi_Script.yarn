@@ -1,0 +1,38 @@
+﻿title: Gigi_Script
+---
+This is an example of a Yarn Spinner script. Write your dialogue here!
+===
+---
+<<declare $HasRubberDuck= false>>
+<<declare $GigiAffinity = 0>>
+<<declare $HelpedGigi = false>>
+
+<<if GigiAffinity = 10>>
+    Gigi: What d'ya want? I already gave you a token of innocence!
+    Gigi: Go bother someone else.
+    
+
+<<else>>
+    <<if HasRubberDuck = false>>
+        Gigi: What d'ya want? Oh, you're someone new. Good, I need someone to run an errand for me, and those two other ghosts are totally useless…
+        -> Ghosts?
+            Gigi: Yeah, there are some other folks around here, but we're all dead, including you and me. I died in this house, but for the life of me I can't remember how.
+        -> Who?
+            Gigi: Yeah, there are some other folks around here, but we're all dead, including you and me. I died in this house, but for the life of me I can't remember how.
+        Gigi: Last thing I remember, I got so upset I threw some whatzit out a window, and that was right before I died. If I could find whatever thingamajigger I chucked out a window, maybe I could remember more about how it happened.
+        Gigi: Make yourself useful and fetch me that doohickey. And don't bring me the wrong one, or I won't give you a token of innocence!
+        <<set GigiAffinity = GigiAffinity + 5>>
+
+    <<elseif HasRubberDuck = false and GigiAffinity = 5>>
+        Gigi: Where'd you find this piece of junk? You youngsters never pay attention.
+        Gigi: I said I remember chucking some thingy out a window right before I died. Maybe you could try looking around the house.
+
+    <<else>>
+        Gigi: Oh my goodness, this is it! Oh how I remember now… I was in the bathtub!
+        Gigi: I was taking a bath when I got upset at an intruder on my property, so chucked a rubber duck at them! Serves them right! It must have been that wicked intruder who did me in… that or I slipped in the tub.
+        Gigi: Bah, that doesn't sound like something I'd do. Anyways, you've been quite helpful. I guess I'll give you this token of innocence. I hear if you collect three of them, you can unlock that damn door that’s blocking the way out.
+        Gigi: You'll only get one from me, but maybe you could help those rapscallions who hang out around here. Best of luck, kid.
+        <<set GigiAffinity = GigiAffinity + 5>>
+        <<set HelpedGigi = true>>
+<<endif>>
+<<endif>>

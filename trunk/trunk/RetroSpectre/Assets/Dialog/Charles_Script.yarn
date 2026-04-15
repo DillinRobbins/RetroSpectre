@@ -1,0 +1,35 @@
+﻿title: Charles_Script
+---
+This is an example of a Yarn Spinner script. Write your dialogue here!
+===
+---
+<<declare $HasSunglasses= false>>
+<<declare $CharlesAffinity = 0>>
+<<declare $HelpedCharles = false>>
+
+<<if CharlesAffinity = 10>>
+    Charles: Thanks for helping me out. I'm sure there are others around here who could benefit from your item-finding skills too.
+    
+
+<<else>>
+    <<if HasSunglasses = false>>
+        Charles: Hey, new guy. You must be dead, same as everyone else around here. I’m Charles. Welcome to, I think, Limbo.
+        Charles: All of us here aren’t really sure what happened, but maybe you can change that. I know that I died, but the specifics are foggy for some reason.
+        Charles: You have no idea what it's like. I feel like I've forgotten how my own story ended. And I don't even have a souvenir from when I was alive… unless you could help me?
+        Charles: All I remember is the smell of chlorine. If you can jog my memory by bringing me something, I'll give you a fun prize.
+        <<set CharlesAffinity = CharlesAffinity + 5>>
+
+    <<elseif HasSunglasses = false and CharlesAffinity = 5>>
+        Charles: Uh… What is this? If you brought this to jog my memory it's not working.
+        Charles: The last thing I remember is the smell of chlorine… and maybe the sound of splashing? It's still foggy.
+        Charles: Try bringing me something else.
+
+    <<else>>
+        Charles: Hey! I missed these! Of course! I remember how foggy they got while I was hanging out by the pool.
+        Charles: In fact, I think I was wearing them when I was shoved from behind… that must have been how I died! I fell into the pool and drowned!
+        Charles: But who would have pushed me in? It could have been anyone… well, anyone except you. Thanks for helping me out, you've proven you're a good dude.
+        Charles: Anyways, you've given me a lot to think about. Here's your prize: a token of innocence. I hear if you collect three of them, you can ascend and leave this depressing place.
+        <<set CharlesAffinity = CharlesAffinity + 5>>
+        <<set HelpedCharles = true>>
+<<endif>>
+<<endif>>
