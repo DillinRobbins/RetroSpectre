@@ -1,0 +1,7 @@
+﻿title: FrisbeeGot
+---
+<<set $itemName = "Frisbee">>
+<<set $HasFrisbee = 1>>
+
+Got {$itemName}!
+===
